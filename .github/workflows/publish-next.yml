@@ -1,0 +1,54 @@
+name: Publish next
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    concurrency:
+      group: publish-next
+      cancel-in-progress: true
+    name: Publish @next release to npm
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    if: github.repository_owner == 'rygent' && !(github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(release)'))
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node v22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          registry-url: https://registry.yarnpkg.com/
+      - name: Check current @next version
+        id: release-check
+        run: |
+          if [[ $(npm view eslint-config-terrax@next version | grep -e "$(git rev-parse --short HEAD)") ]]; \
+            then echo "RELEASE=0" >> "$GITHUB_OUTPUT"; \
+            else echo "RELEASE=1" >> "$GITHUB_OUTPUT"; \
+          fi
+      - name: Install dependencies
+        if: steps.release-check.outputs.release == '1'
+        run: yarn --immutable
+      - name: Bump version
+        if: steps.release-check.outputs.release == '1'
+        run: node ./scripts/bump-version.js
+      - name: Deprecate old @next versions
+        if: steps.release-check.outputs.release == '1'
+        run: yarn npm-deprecate --name "*next*" --package eslint-config-terrax --message "No longer supported. Install the latest @next release" || true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Publish new @next version
+        if: steps.release-check.outputs.release == '1'
+        run: |
+          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
+          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
+
+          npm version $(jq --raw-output '.version' package.json)-next.$(git rev-parse --short HEAD)
+          yarn npm publish --tag next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

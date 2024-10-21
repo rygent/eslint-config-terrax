@@ -1,0 +1,87 @@
+name: Create PR for new releases and publish new version
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run every Monday and Thursday at 12:00
+    - cron: '0 12 * * 1,4'
+
+jobs:
+  create_pr:
+    name: Create PR for new version
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'rygent' && github.event_name != 'push'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node v22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          registry-url: https://registry.yarnpkg.org/
+      - name: Install dependencies
+        run: yarn --immutable
+      - name: Set Git User and Email
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Bump version
+        run: node ./scripts/bump-version.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create branch for changes, add all changes and push
+        run: |
+          git checkout -b "chore/release/$(jq --raw-output '.version' package.json)"
+
+          # Run changelog generation, deno script, website version bump
+          yarn changelog
+
+          # Add all changes, commit and push
+          git add --all .
+          git commit -m "chore(release): $(jq --raw-output '.version' package.json) 🎉" -m "Build ran for ${GITHUB_SHA}"
+          git push -u origin "chore/release/$(jq --raw-output '.version' package.json)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Pull Request
+        run: node ./scripts/actions/create-pr.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  create_release:
+    name: Create release and publish
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    if: github.repository_owner == 'rygent' && github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(release)') && !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node v22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          registry-url: https://registry.yarnpkg.org/
+      - name: Install dependencies
+        run: yarn --immutable
+      - name: Publish release to npm
+        run: |
+          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
+          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
+
+          yarn npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      - name: Create GitHub release
+        run: node ./scripts/actions/create-release.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

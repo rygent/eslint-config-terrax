@@ -1,0 +1,127 @@
+{
+  "name": "eslint-config-terrax",
+  "version": "0.1.0",
+  "description": "The ESLint shareable config",
+  "type": "module",
+  "main": "./dist/cjs/common.cjs",
+  "module": "./dist/esm/common.mjs",
+  "types": "./dist/cjs/common.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./common": {
+      "import": {
+        "types": "./dist/esm/common.d.mts",
+        "default": "./dist/esm/common.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/common.d.cts",
+        "default": "./dist/cjs/common.cjs"
+      }
+    },
+    "./node": {
+      "import": {
+        "types": "./dist/esm/node.d.mts",
+        "default": "./dist/esm/node.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/node.d.cts",
+        "default": "./dist/cjs/node.cjs"
+      }
+    },
+    "./prettier": {
+      "import": {
+        "types": "./dist/esm/prettier.d.mts",
+        "default": "./dist/esm/prettier.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/prettier.d.cts",
+        "default": "./dist/cjs/prettier.cjs"
+      }
+    },
+    "./stylistic": {
+      "import": {
+        "types": "./dist/esm/stylistic.d.mts",
+        "default": "./dist/esm/stylistic.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/stylistic.d.cts",
+        "default": "./dist/cjs/stylistic.cjs"
+      }
+    },
+    "./typescript": {
+      "import": {
+        "types": "./dist/esm/typescript.d.mts",
+        "default": "./dist/esm/typescript.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/typescript.d.cts",
+        "default": "./dist/cjs/typescript.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup && yarn fix-mts-types",
+    "build:check": "tsc --noEmit",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "fix-mts-types": "node scripts/fix-tsup-type-files.js",
+    "lint": "prettier --check . && eslint \"src/**/*.ts\"",
+    "format": "prettier --write . && eslint \"src/**/*.ts\" --fix",
+    "prepack": "yarn build",
+    "update": "yarn upgrade-interactive"
+  },
+  "author": "Rygent <46462403+rygent@users.noreply.github.com>",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "config",
+    "typescript",
+    "lint",
+    "linter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gihub.com/rygent/eslint-config-terrax.git"
+  },
+  "bugs": {
+    "url": "https://gihub.com/rygent/eslint-config-terrax/issues"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.10.0"
+  },
+  "devDependencies": {
+    "@octokit/action": "^7.0.0",
+    "@sapphire/node-utilities": "^1.0.2",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-recommended-bump": "^10.0.0",
+    "esbuild-plugin-file-path-extensions": "^2.1.3",
+    "eslint": "^9.13.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "files": [
+    "./dist/"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=v20.11.0"
+  },
+  "packageManager": "yarn@4.5.1"
+}
