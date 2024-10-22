@@ -9,10 +9,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 			message: 'Import Buffer from `node:buffer` instead'
 		},
 		{
-			name: 'process',
-			message: 'Import process from `node:process` instead'
-		},
-		{
 			name: 'setTimeout',
 			message: 'Import setTimeout from `node:timers` instead'
 		},
