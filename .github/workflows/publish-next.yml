@@ -39,7 +39,7 @@ jobs:
         run: node ./scripts/bump-version.js
       - name: Deprecate old @next versions
         if: steps.release-check.outputs.release == '1'
-        run: yarn npm-deprecate --name "*next*" --package eslint-config-terrax --message "No longer supported. Install the latest @next release" || true
+        run: yarn dlx @favware/npm-deprecate --name "*next*" --package eslint-config-terrax --message "No longer supported. Install the latest @next release" || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Publish new @next version
