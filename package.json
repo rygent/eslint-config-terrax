@@ -17,6 +17,16 @@
         "default": "./dist/cjs/index.cjs"
       }
     },
+    "./browser": {
+      "import": {
+        "types": "./dist/esm/browser.d.mts",
+        "default": "./dist/esm/browser.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/browser.d.cts",
+        "default": "./dist/cjs/browser.cjs"
+      }
+    },
     "./common": {
       "import": {
         "types": "./dist/esm/common.d.mts",
@@ -25,6 +35,36 @@
       "require": {
         "types": "./dist/cjs/common.d.cts",
         "default": "./dist/cjs/common.cjs"
+      }
+    },
+    "./edge": {
+      "import": {
+        "types": "./dist/esm/edge.d.mts",
+        "default": "./dist/esm/edge.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/edge.d.cts",
+        "default": "./dist/cjs/edge.cjs"
+      }
+    },
+    "./jsx-a11y": {
+      "import": {
+        "types": "./dist/esm/jsx-a11y.d.mts",
+        "default": "./dist/esm/jsx-a11y.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/jsx-a11y.d.cts",
+        "default": "./dist/cjs/jsx-a11y.cjs"
+      }
+    },
+    "./next": {
+      "import": {
+        "types": "./dist/esm/next.d.mts",
+        "default": "./dist/esm/next.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/next.d.cts",
+        "default": "./dist/cjs/next.cjs"
       }
     },
     "./node": {
@@ -45,6 +85,16 @@
       "require": {
         "types": "./dist/cjs/prettier.d.cts",
         "default": "./dist/cjs/prettier.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/esm/react.d.mts",
+        "default": "./dist/esm/react.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/react.d.cts",
+        "default": "./dist/cjs/react.cjs"
       }
     },
     "./stylistic": {
