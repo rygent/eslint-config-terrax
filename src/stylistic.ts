@@ -1,5 +1,4 @@
 import type { TSESLint } from '@typescript-eslint/utils';
-import tseslint from 'typescript-eslint';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -101,15 +100,13 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@stylistic/yield-star-spacing': ['error', 'before']
 };
 
-const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
-	...tseslint.configs.stylistic,
-	...tseslint.configs.stylisticTypeChecked,
+const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
 			'@stylistic': stylisticPlugin
 		},
 		rules
 	}
-);
+];
 
 export default config;

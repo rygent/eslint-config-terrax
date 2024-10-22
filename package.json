@@ -97,6 +97,16 @@
         "default": "./dist/cjs/react.cjs"
       }
     },
+    "./stylistic-typescript": {
+      "import": {
+        "types": "./dist/esm/stylistic-typescript.d.mts",
+        "default": "./dist/esm/stylistic-typescript.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/stylistic-typescript.d.cts",
+        "default": "./dist/cjs/stylistic-typescript.cjs"
+      }
+    },
     "./stylistic": {
       "import": {
         "types": "./dist/esm/stylistic.d.mts",

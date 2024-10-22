@@ -7,4 +7,5 @@ export { default as node } from './node';
 export { default as prettier } from './prettier';
 export { default as react } from './react';
 export { default as stylistic } from './stylistic';
+export { default as stylistictypescript } from './stylistic-typescript';
 export { default as typescript } from './typescript';
