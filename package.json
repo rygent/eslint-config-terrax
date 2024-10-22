@@ -96,16 +96,22 @@
     "url": "https://gihub.com/rygent/eslint-config-terrax/issues"
   },
   "dependencies": {
+    "@eslint/compat": "^1.2.1",
+    "@next/eslint-plugin-next": "^15.0.0",
     "@stylistic/eslint-plugin": "^2.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-jsx-a11y": "^6.10.1",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.11.0",
     "typescript-eslint": "^8.10.0"
   },
   "devDependencies": {
     "@octokit/action": "^7.0.0",
     "@sapphire/node-utilities": "^1.0.2",
+    "@types/eslint-plugin-jsx-a11y": "^6",
     "conventional-changelog-cli": "^5.0.0",
     "conventional-recommended-bump": "^10.0.0",
     "esbuild-plugin-file-path-extensions": "^2.1.3",
