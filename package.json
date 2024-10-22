@@ -156,7 +156,7 @@
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.11.0",
-    "typescript-eslint": "^8.10.0"
+    "typescript-eslint": "^8.11.0"
   },
   "devDependencies": {
     "@octokit/action": "^7.0.0",
