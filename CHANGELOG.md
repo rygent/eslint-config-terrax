@@ -1,3 +1,12 @@
+# [0.2.0](https://gihub.com/rygent/eslint-config-terrax/compare/0.1.2...0.2.0) (2024-10-23)
+
+
+### Features
+
+* support jsx rules ([a3b9a36](https://gihub.com/rygent/eslint-config-terrax/commits/a3b9a3635c6c6aa4f9018eda948ffce0fb1485bf))
+
+
+
 ## [0.1.2](https://gihub.com/rygent/eslint-config-terrax/compare/0.1.1...0.1.2) (2024-10-22)
 
 
