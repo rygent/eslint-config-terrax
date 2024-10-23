@@ -3,6 +3,7 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import eslintPluginReact from 'eslint-plugin-react';
 // @ts-expect-error eslint-plugin-react-hooks is not typed
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import jsx from './jsx';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'react/no-unknown-property': 'off',
@@ -20,10 +21,12 @@ const settings: TSESLint.FlatConfig.Settings = {
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [
+	// @ts-expect-error
+	...jsx,
 	{
-		...eslintPluginReact.configs.flat.recommended,
-		...eslintPluginReact.configs.flat['jsx-runtime'],
+		// @ts-expect-error
 		plugins: {
+			react: eslintPluginReact,
 			'react-hooks': fixupPluginRules(eslintPluginReactHooks)
 		},
 		rules,
