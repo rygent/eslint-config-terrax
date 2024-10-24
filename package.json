@@ -167,7 +167,7 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.2.1",
-    "@next/eslint-plugin-next": "^15.0.0",
+    "@next/eslint-plugin-next": "^15.0.1",
     "@stylistic/eslint-plugin": "^2.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^4.3.1",
