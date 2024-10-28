@@ -1,3 +1,7 @@
+## [0.2.1](https://gihub.com/rygent/eslint-config-terrax/compare/0.2.0...0.2.1) (2024-10-28)
+
+
+
 # [0.2.0](https://gihub.com/rygent/eslint-config-terrax/compare/0.1.2...0.2.0) (2024-10-23)
 
 
