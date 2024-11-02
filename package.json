@@ -139,7 +139,6 @@
     }
   },
   "scripts": {
-    "gen-index": "node ./scripts/gen-index.js",
     "build": "tsup && pnpm run fix-mts-types",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "fix-mts-types": "node scripts/fix-tsup-type-files.js",
