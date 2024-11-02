@@ -43,8 +43,8 @@ if (lastReleaseCommitHash) {
 }
 
 const conventionalReleaseTypesTo0Ver = new Map([
-	['major', 'major'],
-	['minor', 'minor'],
+	['major', 'minor'],
+	['minor', 'patch'],
 	['patch', 'patch']
 ]);
 
