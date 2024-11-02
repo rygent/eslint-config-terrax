@@ -166,7 +166,7 @@
     "url": "https://gihub.com/rygent/eslint-config-terrax/issues"
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.1",
+    "@eslint/compat": "^1.2.2",
     "@next/eslint-plugin-next": "^15.0.1",
     "@stylistic/eslint-plugin": "^2.9.0",
     "eslint-config-prettier": "^9.1.0",
