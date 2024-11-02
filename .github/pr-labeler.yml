@@ -8,4 +8,4 @@ ci:
 
 dependencies:
   - changed-files:
-      - any-glob-to-any-file: ['package.json', 'yarn.lock']
+      - any-glob-to-any-file: ['package.json', 'pnpm-lock.yaml']

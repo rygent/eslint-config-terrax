@@ -140,14 +140,15 @@
   },
   "scripts": {
     "gen-index": "node ./scripts/gen-index.js",
-    "build": "tsup && yarn fix-mts-types",
-    "build:check": "tsc --noEmit",
+    "build": "tsup && pnpm run fix-mts-types",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "fix-mts-types": "node scripts/fix-tsup-type-files.js",
     "lint": "prettier --check . && eslint \"src/**/*.ts\"",
     "format": "prettier --write . && eslint \"src/**/*.ts\" --fix",
-    "prepack": "yarn build",
-    "update": "yarn upgrade-interactive"
+    "typecheck": "tsc --noEmit",
+    "prepack": "pnpm run build",
+    "update": "pnpm update --interactive",
+    "update:latest": "pnpm update --interactive --latest"
   },
   "author": "Rygent <46462403+rygent@users.noreply.github.com>",
   "license": "MIT",
@@ -197,7 +198,8 @@
     "provenance": true
   },
   "engines": {
-    "node": ">=v20.11.0"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0",
+    "pnpm": "^9.12.0"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "pnpm@9.12.3"
 }
