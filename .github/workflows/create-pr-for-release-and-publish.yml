@@ -19,14 +19,15 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Use Node v22
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js v22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: yarn
-          registry-url: https://registry.yarnpkg.org/
+          cache: pnpm
       - name: Install dependencies
-        run: yarn --immutable
+        run: pnpm install --frozen-lockfile --prefer-offline
       - name: Set Git User and Email
         run: |
           git config user.name "github-actions[bot]"
@@ -40,7 +41,7 @@ jobs:
           git checkout -b "chore/release/$(jq --raw-output '.version' package.json)"
 
           # Run changelog generation, deno script, website version bump
-          yarn changelog
+          pnpm run changelog
 
           # Add all changes, commit and push
           git add --all .
@@ -65,20 +66,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Use Node v22
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js v22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: yarn
-          registry-url: https://registry.yarnpkg.org/
+          cache: pnpm
       - name: Install dependencies
-        run: yarn --immutable
+        run: pnpm install --frozen-lockfile --prefer-offline
       - name: Publish release to npm
         run: |
-          yarn config set npmAuthToken ${NODE_AUTH_TOKEN}
-          yarn config set npmPublishRegistry "https://registry.yarnpkg.com"
-
-          yarn npm publish
+          pnpm publish --provenance --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Create GitHub release
