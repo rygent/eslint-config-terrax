@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          registry-url: https://registry.npmjs.org/
       - name: Check current @next version
         id: release-check
         run: |
@@ -42,7 +43,7 @@ jobs:
         if: steps.release-check.outputs.release == '1'
         run: |
           pnpm version $(jq --raw-output '.version' package.json)-next.$(git rev-parse --short HEAD)
-          pnpm publish --provenance --no-git-checks --tag next || true
+          pnpm publish --no-git-checks --tag next || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Deprecate old @next versions
