@@ -78,7 +78,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Publish release to npm
         run: |
-          pnpm publish --provenance --no-git-checks
+          pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Create GitHub release
