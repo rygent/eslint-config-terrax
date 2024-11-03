@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/action';
 
 const packageJson = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), { encoding: 'utf8' }));
 const octokit = new Octokit();
-const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY.split('/');
+const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY!.split('/');
 const prPattern = new RegExp(
 	`\\(\\[#(?<prNumber>\\d+)\\]\\(https:\\/\\/github\\.com\\/${OWNER}\\/${REPOSITORY}\\/(?:issues|pulls)\\/(?:\\d+)\\)\\)`,
 	'gi'
@@ -21,7 +21,7 @@ const previousReleases = await octokit.repos.listReleases({
 const previousRelease = previousReleases.data.find((release) => !release.draft);
 console.log('👀 Previous release version:', previousRelease?.tag_name);
 
-const releaseChangelog = [];
+const releaseChangelog: string[] = [];
 const changelogContent = await readFile(new URL('../../CHANGELOG.md', import.meta.url), { encoding: 'utf8' });
 
 let contentToParseAndAdd = '';

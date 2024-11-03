@@ -5,5 +5,5 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["./scripts/**/*.js", "./src/**/*.ts", "eslint.config.js", "prettier.config.js", "tsup.config.ts"]
+  "include": ["./scripts/**/*.ts", "./src/**/*.ts", "eslint.config.js", "prettier.config.js", "tsup.config.ts"]
 }

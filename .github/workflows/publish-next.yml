@@ -37,7 +37,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Bump version
         if: steps.release-check.outputs.release == '1'
-        run: node ./scripts/bump-version.js
+        run: pnpm exec tsx scripts/bump-version.ts
       - name: Publish new @next version
         if: steps.release-check.outputs.release == '1'
         run: |

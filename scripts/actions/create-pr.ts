@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/action';
 
 const packageJson = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), { encoding: 'utf8' }));
 const octokit = new Octokit();
-const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY.split('/');
+const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY!.split('/');
 
 console.log('👀 Getting the previous release version');
 const previousReleases = await octokit.repos.listReleases({

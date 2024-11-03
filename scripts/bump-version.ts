@@ -85,7 +85,7 @@ if (!process.env.GITHUB_TOKEN) {
 }
 
 const octokit = new Octokit();
-const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY.split('/');
+const [OWNER, REPOSITORY] = process.env.GITHUB_REPOSITORY!.split('/');
 
 const pullRequests = await octokit.pulls.list({
 	owner: OWNER,

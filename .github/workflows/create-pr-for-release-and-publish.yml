@@ -33,7 +33,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Bump version
-        run: node ./scripts/bump-version.js
+        run: pnpm exec tsx scripts/bump-version.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create branch for changes, add all changes and push
@@ -50,7 +50,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
-        run: node ./scripts/actions/create-pr.js
+        run: pnpm exec tsx scripts/actions/create-pr.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -81,6 +81,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Create GitHub release
-        run: node ./scripts/actions/create-release.js
+        run: pnpm exec tsx scripts/actions/create-release.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
