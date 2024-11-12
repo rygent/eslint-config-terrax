@@ -168,7 +168,7 @@
   "funding": "https://github.com/rygent/eslint-config-terrax?sponsor",
   "dependencies": {
     "@eslint/compat": "^1.2.2",
-    "@next/eslint-plugin-next": "^15.0.2",
+    "@next/eslint-plugin-next": "^15.0.3",
     "@stylistic/eslint-plugin": "^2.10.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^4.4.0",
