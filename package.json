@@ -182,7 +182,7 @@
   "devDependencies": {
     "@octokit/action": "^7.0.0",
     "@sapphire/node-utilities": "^1.0.2",
-    "@types/node": "^22.8.6",
+    "@types/node": "^22.9.0",
     "conventional-changelog-cli": "^5.0.0",
     "conventional-recommended-bump": "^10.0.0",
     "esbuild-plugin-file-path-extensions": "^2.1.3",
