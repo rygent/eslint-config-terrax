@@ -116,7 +116,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-unused-expressions': 'off',
 	'no-unused-vars': 'off',
 	'no-useless-constructor': 'off',
-	'require-await': 'off'
+	'require-await': 'off',
+
+	'@stylistic/member-delimiter-style': 'error',
+	'@stylistic/type-annotation-spacing': 'error'
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -139,6 +142,8 @@ const settings: TSESLint.FlatConfig.Settings = {
 const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
 	...tseslint.configs.recommended,
 	...tseslint.configs.recommendedTypeChecked,
+	...tseslint.configs.stylistic,
+	...tseslint.configs.stylisticTypeChecked,
 	{
 		rules,
 		settings
