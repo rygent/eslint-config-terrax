@@ -43,7 +43,7 @@ jobs:
         if: steps.release-check.outputs.release == '1'
         run: |
           pnpm version $(jq --raw-output '.version' package.json)-next.$(git rev-parse --short HEAD)
-          pnpm publish --no-git-checks --tag next || true
+          pnpm publish --no-git-checks --tag next --provenance=false || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       - name: Deprecate old @next versions
