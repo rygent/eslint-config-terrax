@@ -1,5 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import eslintPluginImportX from 'eslint-plugin-import-x';
+import globals from 'globals';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'accessor-pairs': 'warn',
@@ -195,12 +196,16 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			reportUnusedDisableDirectives: true
 		},
 		languageOptions: {
+			globals: {
+				...globals.node,
+				...globals.es2024
+			},
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 			parserOptions: {
 				requireConfigFile: false,
 				ecmaFeatures: {
-					globalReturn: false,
+					globalReturn: true,
 					impliedStrict: true
 				}
 			}

@@ -37,16 +37,6 @@
         "default": "./dist/cjs/common.cjs"
       }
     },
-    "./edge": {
-      "import": {
-        "types": "./dist/esm/edge.d.mts",
-        "default": "./dist/esm/edge.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/edge.d.cts",
-        "default": "./dist/cjs/edge.cjs"
-      }
-    },
     "./jsx-a11y": {
       "import": {
         "types": "./dist/esm/jsx-a11y.d.mts",
@@ -75,26 +65,6 @@
       "require": {
         "types": "./dist/cjs/next.d.cts",
         "default": "./dist/cjs/next.cjs"
-      }
-    },
-    "./node": {
-      "import": {
-        "types": "./dist/esm/node.d.mts",
-        "default": "./dist/esm/node.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/node.d.cts",
-        "default": "./dist/cjs/node.cjs"
-      }
-    },
-    "./prettier": {
-      "import": {
-        "types": "./dist/esm/prettier.d.mts",
-        "default": "./dist/esm/prettier.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/prettier.d.cts",
-        "default": "./dist/cjs/prettier.cjs"
       }
     },
     "./react": {
@@ -170,10 +140,8 @@
     "@eslint/compat": "^1.2.2",
     "@next/eslint-plugin-next": "^15.0.3",
     "@stylistic/eslint-plugin": "^2.10.1",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^4.4.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.12.0",
@@ -187,6 +155,8 @@
     "conventional-recommended-bump": "^10.0.0",
     "esbuild-plugin-file-path-extensions": "^2.1.3",
     "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
