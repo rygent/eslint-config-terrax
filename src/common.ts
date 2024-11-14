@@ -1,8 +1,7 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import eslint from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import eslintPluginImportX from 'eslint-plugin-import-x';
-import globals from 'globals';
+import eslintPluginImport from 'eslint-plugin-import-x';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'accessor-pairs': 'warn',
@@ -278,23 +277,19 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			reportUnusedDisableDirectives: true
 		},
 		languageOptions: {
-			globals: {
-				...globals.node,
-				...globals.es2024
-			},
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 			parserOptions: {
 				requireConfigFile: false,
 				ecmaFeatures: {
-					globalReturn: true,
+					globalReturn: false,
 					impliedStrict: true
 				}
 			}
 		},
 		plugins: {
 			'@stylistic': stylisticPlugin,
-			'import-x': eslintPluginImportX
+			'import-x': eslintPluginImport
 		},
 		rules,
 		settings

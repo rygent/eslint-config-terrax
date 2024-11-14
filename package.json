@@ -37,6 +37,16 @@
         "default": "./dist/cjs/common.cjs"
       }
     },
+    "./edge": {
+      "import": {
+        "types": "./dist/esm/edge.d.mts",
+        "default": "./dist/esm/edge.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/edge.d.cts",
+        "default": "./dist/cjs/edge.cjs"
+      }
+    },
     "./jsx-a11y": {
       "import": {
         "types": "./dist/esm/jsx-a11y.d.mts",
@@ -65,6 +75,16 @@
       "require": {
         "types": "./dist/cjs/next.d.cts",
         "default": "./dist/cjs/next.cjs"
+      }
+    },
+    "./node": {
+      "import": {
+        "types": "./dist/esm/node.d.mts",
+        "default": "./dist/esm/node.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/node.d.cts",
+        "default": "./dist/cjs/node.cjs"
       }
     },
     "./react": {
