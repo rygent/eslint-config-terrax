@@ -115,7 +115,6 @@
   "bugs": {
     "url": "https://github.com/rygent/eslint-config-terrax/issues"
   },
-  "funding": "https://github.com/rygent/eslint-config-terrax?sponsor",
   "dependencies": {
     "@eslint/compat": "^1.2.2",
     "@eslint/js": "^9.14.0",
