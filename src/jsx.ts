@@ -2,7 +2,6 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import eslintPluginReact from 'eslint-plugin-react';
 
 const rules: TSESLint.FlatConfig.Rules = {
-	// React
 	'react/display-name': 'warn',
 	'react/jsx-key': [
 		'warn',

@@ -2,6 +2,7 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import tseslint from 'typescript-eslint';
 
 const rules: TSESLint.FlatConfig.Rules = {
+	'@typescript-eslint/adjacent-overload-signatures': 'error',
 	'@typescript-eslint/array-type': 'off',
 	'@typescript-eslint/await-thenable': 'off',
 	'@typescript-eslint/ban-ts-comment': [
@@ -87,7 +88,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/prefer-for-of': 'error',
 	'@typescript-eslint/prefer-function-type': 'error',
 	'@typescript-eslint/prefer-includes': 'error',
-	'@typescript-eslint/prefer-nullish-coalescing': 'error',
+	'@typescript-eslint/prefer-nullish-coalescing': [
+		'error',
+		{ ignoreConditionalTests: true, ignorePrimitives: { bigint: false, boolean: false, number: false, string: true } }
+	],
 	'@typescript-eslint/prefer-optional-chain': 'error',
 	'@typescript-eslint/prefer-readonly': 'error',
 	'@typescript-eslint/prefer-readonly-parameter-types': 'off',
@@ -104,6 +108,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@typescript-eslint/triple-slash-reference': 'off',
 	'@typescript-eslint/unbound-method': 'error',
 	'@typescript-eslint/unified-signatures': 'error',
+
 	'default-param-last': 'off',
 	'dot-notation': 'off',
 	'no-array-constructor': 'off',
@@ -119,7 +124,11 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'require-await': 'off',
 
 	'@stylistic/member-delimiter-style': 'error',
-	'@stylistic/type-annotation-spacing': 'error'
+	'@stylistic/type-annotation-spacing': 'error',
+	'@stylistic/type-generic-spacing': 'error',
+	'@stylistic/type-named-tuple-spacing': 'error',
+
+	'import-x/no-unresolved': 'off'
 };
 
 const settings: TSESLint.FlatConfig.Settings = {

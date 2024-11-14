@@ -1,5 +1,5 @@
 import { fixupPluginRules } from '@eslint/compat';
-// @ts-expect-error eslint-plugin-next is not typed
+// @ts-expect-error @next/eslint-plugin-next is not typed
 import eslintPluginNext from '@next/eslint-plugin-next';
 import type { TSESLint } from '@typescript-eslint/utils';
 import jsxa11y from './jsx-a11y';
@@ -26,7 +26,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@next/next/no-title-in-document-head': 'warn',
 	'@next/next/no-typos': 'warn',
 	'@next/next/no-unwanted-polyfillio': 'warn',
-	'import-x/extensions': 0
+
+	'import-x/extensions': 'off'
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [

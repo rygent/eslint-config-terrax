@@ -1,4 +1,5 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import eslint from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import globals from 'globals';
@@ -22,18 +23,15 @@ const rules: TSESLint.FlatConfig.Rules = {
 		}
 	],
 	eqeqeq: ['error', 'smart'],
-	'for-direction': 'error',
 	'func-name-matching': ['warn', 'always'],
 	'func-names': ['warn', 'as-needed'],
 	'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
-	'getter-return': 'error',
 	'guard-for-in': 'warn',
 	'handle-callback-err': 'error',
 	'max-depth': ['error', { max: 5 }],
 	'max-nested-callbacks': ['error', { max: 4 }],
 	'no-alert': 'error',
 	'no-array-constructor': 'error',
-	'no-async-promise-executor': 'error',
 	'no-caller': 'error',
 	'no-case-declarations': 'error',
 	'no-catch-shadow': 'error',
@@ -42,34 +40,21 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-cond-assign': 'warn',
 	'no-console': ['error', { allow: ['log', 'warn', 'error'] }],
 	'no-const-assign': 'error',
-	'no-constant-binary-expression': 'error',
-	'no-constant-condition': 'error',
-	'no-control-regex': 'error',
 	'no-debugger': 'error',
 	'no-delete-var': 'error',
 	'no-dupe-args': 'error',
 	'no-dupe-class-members': 'error',
-	'no-dupe-else-if': 'error',
 	'no-dupe-keys': 'error',
 	'no-duplicate-case': 'error',
 	'no-duplicate-imports': 'off',
 	'no-else-return': 'warn',
-	'no-empty': 'error',
 	'no-empty-character-class': 'error',
 	'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
-	'no-empty-pattern': 'error',
-	'no-empty-static-block': 'error',
 	'no-eq-null': 'warn',
-	'no-ex-assign': 'error',
 	'no-extend-native': 'warn',
-	'no-extra-boolean-cast': 'error',
 	'no-extra-label': 'warn',
-	'no-fallthrough': 'error',
-	'no-func-assign': 'error',
-	'no-global-assign': 'error',
 	'no-implicit-coercion': 'error',
 	'no-implied-eval': 'error',
-	'no-import-assign': 'error',
 	'no-inline-comments': 'warn',
 	'no-invalid-regexp': 'warn',
 	'no-invalid-this': 'off',
@@ -85,22 +70,17 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-label-var': 'error',
 	'no-lone-blocks': 'error',
 	'no-lonely-if': 'error',
-	'no-loss-of-precision': 'error',
-	'no-misleading-character-class': 'error',
 	'no-mixed-requires': 'error',
 	'no-multi-str': 'error',
 	'no-new-func': 'warn',
-	'no-new-native-nonconstructor': 'error',
 	'no-new-object': 'error',
 	'no-new-require': 'error',
 	'no-new-symbol': 'warn',
 	'no-new-wrappers': 'warn',
-	'no-nonoctal-decimal-escape': 'error',
 	'no-obj-calls': 'warn',
 	'no-octal': 'error',
 	'no-octal-escape': 'error',
 	'no-path-concat': 'error',
-	'no-prototype-builtins': 'error',
 	'no-redeclare': 'error',
 	'no-regex-spaces': 'warn',
 	'no-return-assign': 'error',
@@ -108,7 +88,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-self-assign': 'error',
 	'no-self-compare': 'warn',
 	'no-sequences': 'error',
-	'no-setter-return': 'error',
 	'no-shadow': 'warn',
 	'no-shadow-restricted-names': 'error',
 	'no-spaced-func': 'error',
@@ -123,10 +102,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-unreachable': 'warn',
 	'no-unsafe-finally': 'warn',
 	'no-unsafe-negation': 'error',
-	'no-unsafe-optional-chaining': 'error',
 	'no-unused-expressions': 'error',
 	'no-unused-labels': 'error',
-	'no-unused-private-class-members': 'error',
 	'no-unused-vars': [
 		'warn',
 		{
@@ -135,9 +112,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 			ignoreRestSiblings: true
 		}
 	],
-	'no-useless-backreference': 'error',
 	'no-useless-call': 'error',
-	'no-useless-catch': 'error',
 	'no-useless-computed-key': 'error',
 	'no-useless-concat': 'warn',
 	'no-useless-constructor': 'error',
@@ -274,7 +249,17 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@stylistic/template-curly-spacing': ['error', 'never'],
 	'@stylistic/template-tag-spacing': ['error', 'never'],
 	'@stylistic/wrap-iife': ['error', 'inside'],
-	'@stylistic/yield-star-spacing': ['error', 'before']
+	'@stylistic/yield-star-spacing': ['error', 'before'],
+
+	'import-x/default': 'error',
+	'import-x/export': 'error',
+	'import-x/extensions': 'off',
+	'import-x/named': 'error',
+	'import-x/namespace': 'error',
+	'import-x/no-duplicates': 'warn',
+	'import-x/no-named-as-default': 'warn',
+	'import-x/no-named-as-default-member': 'warn',
+	'import-x/no-unresolved': 'off'
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -287,6 +272,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 };
 
 const config: TSESLint.FlatConfig.ConfigArray = [
+	eslint.configs.recommended,
 	{
 		linterOptions: {
 			reportUnusedDisableDirectives: true

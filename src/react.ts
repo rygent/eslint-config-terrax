@@ -10,6 +10,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'react/react-in-jsx-scope': 'off',
 	'react/prop-types': 'off',
 	'react/jsx-no-target-blank': 'off',
+
 	'react-hooks/rules-of-hooks': 'error',
 	'react-hooks/exhaustive-deps': 'warn'
 };
