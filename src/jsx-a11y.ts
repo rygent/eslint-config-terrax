@@ -1,5 +1,5 @@
-import { fixupPluginRules } from '@eslint/compat';
 import type { TSESLint } from '@typescript-eslint/utils';
+import { fixupPluginRules } from '@eslint/compat';
 // @ts-expect-error eslint-plugin-jsx-a11y is not typed
 import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 

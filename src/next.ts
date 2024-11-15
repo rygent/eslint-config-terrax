@@ -1,7 +1,7 @@
+import type { TSESLint } from '@typescript-eslint/utils';
 import { fixupPluginRules } from '@eslint/compat';
 // @ts-expect-error @next/eslint-plugin-next is not typed
 import eslintPluginNext from '@next/eslint-plugin-next';
-import type { TSESLint } from '@typescript-eslint/utils';
 import jsxa11y from './jsx-a11y';
 
 const rules: TSESLint.FlatConfig.Rules = {

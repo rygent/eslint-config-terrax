@@ -1,4 +1,5 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import type { ESLint } from 'eslint';
 import eslintPluginReact from 'eslint-plugin-react';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -51,8 +52,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			// @ts-expect-error
-			react: eslintPluginReact
+			react: eslintPluginReact as ESLint.Plugin
 		},
 		rules,
 		settings
