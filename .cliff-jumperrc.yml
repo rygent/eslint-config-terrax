@@ -1,0 +1,10 @@
+name: 'eslint-config-terrax'
+packagePath: '.'
+commitMessageTemplate: 'chore(release): release {{new-version}}'
+tagTemplate: '{{new-version}}'
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+gitRepo: 'rygent/eslint-config-terrax'
+gitHostVariant: 'github'

@@ -6,16 +6,16 @@ on:
 
 jobs:
   testing:
-    name: ESLint and TypeScript compilation
+    name: tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install pnpm
+      - name: Use pnpm
         uses: pnpm/action-setup@v4
-      - name: Install Node.js v22
+      - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
           node-version: 22
