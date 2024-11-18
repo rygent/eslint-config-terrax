@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-terrax",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "The ESLint shareable config",
   "type": "module",
   "main": "./dist/cjs/common.cjs",
