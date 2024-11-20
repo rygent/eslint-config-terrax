@@ -140,7 +140,7 @@
     "@eslint/compat": "^1.2.3",
     "@eslint/js": "^9.15.0",
     "@next/eslint-plugin-next": "^15.0.3",
-    "@stylistic/eslint-plugin": "^2.10.1",
+    "@stylistic/eslint-plugin": "^2.11.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import-x": "^4.4.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
