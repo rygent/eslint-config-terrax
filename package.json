@@ -139,7 +139,7 @@
   "dependencies": {
     "@eslint/compat": "^1.2.4",
     "@eslint/js": "^9.17.0",
-    "@next/eslint-plugin-next": "^15.0.3",
+    "@next/eslint-plugin-next": "^15.1.2",
     "@stylistic/eslint-plugin": "^2.10.1",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import-x": "^4.6.1",
