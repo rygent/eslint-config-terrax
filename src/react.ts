@@ -1,9 +1,9 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import type { ESLint } from 'eslint';
 import { fixupPluginRules } from '@eslint/compat';
-import eslintPluginReact from 'eslint-plugin-react';
+import pluginReact from 'eslint-plugin-react';
 // @ts-expect-error eslint-plugin-react-hooks is not typed
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
 import jsx from './jsx';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -26,8 +26,8 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	...jsx,
 	{
 		plugins: {
-			react: eslintPluginReact as ESLint.Plugin,
-			'react-hooks': fixupPluginRules(eslintPluginReactHooks)
+			react: pluginReact as ESLint.Plugin,
+			'react-hooks': fixupPluginRules(pluginReactHooks)
 		},
 		rules,
 		settings

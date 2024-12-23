@@ -1,6 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import type { ESLint } from 'eslint';
-import eslintPluginReact from 'eslint-plugin-react';
+import pluginReact from 'eslint-plugin-react';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'react/display-name': 'warn',
@@ -52,7 +52,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			react: eslintPluginReact as ESLint.Plugin
+			react: pluginReact as ESLint.Plugin
 		},
 		rules,
 		settings

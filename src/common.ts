@@ -1,7 +1,7 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import eslint from '@eslint/js';
-import stylisticPlugin from '@stylistic/eslint-plugin';
-import eslintPluginImport from 'eslint-plugin-import-x';
+import pluginStylistic from '@stylistic/eslint-plugin';
+import pluginImport from 'eslint-plugin-import-x';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'accessor-pairs': 'warn',
@@ -288,8 +288,8 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			'@stylistic': stylisticPlugin,
-			'import-x': eslintPluginImport
+			'@stylistic': pluginStylistic,
+			'import-x': pluginImport
 		},
 		rules,
 		settings
