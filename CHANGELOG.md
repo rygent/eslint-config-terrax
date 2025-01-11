@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.4](https://github.com/rygent/eslint-config-terrax/compare/0.3.3...0.3.4) - (2025-01-11)
+
+## Refactor
+
+- Rename eslint plugin imports for consistency ([8eaf045](https://github.com/rygent/eslint-config-terrax/commit/8eaf0450acb39b02c66c5ef56bdb34bd95119ff2)) by @rygent
+
 # [0.3.1](https://github.com/rygent/eslint-config-terrax/compare/0.3.0...0.3.1) - (2024-11-15)
 
 ## Typings
