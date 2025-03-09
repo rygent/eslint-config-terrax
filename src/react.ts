@@ -2,7 +2,6 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import type { ESLint } from 'eslint';
 import { fixupPluginRules } from '@eslint/compat';
 import pluginReact from 'eslint-plugin-react';
-// @ts-expect-error eslint-plugin-react-hooks is not typed
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import jsx from './jsx';
 
