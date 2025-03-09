@@ -39,7 +39,7 @@ importers:
         specifier: ^15.15.0
         version: 15.15.0
       typescript-eslint:
-        specifier: ^8.20.0
+        specifier: ^8.26.0
         version: 8.26.0(eslint@9.22.0)(typescript@5.8.2)
     devDependencies:
       '@favware/cliff-jumper':
