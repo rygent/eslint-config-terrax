@@ -1,6 +1,8 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import eslint from '@eslint/js';
 import pluginStylistic from '@stylistic/eslint-plugin';
+import pluginStylisticTs from '@stylistic/eslint-plugin-ts';
+import pluginStylisticPlus from '@stylistic/eslint-plugin-plus';
 import pluginImport from 'eslint-plugin-import-x';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -155,8 +157,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'valid-typeof': 'error',
 	yoda: 'error',
 
-	'@stylistic/array-bracket-newline': ['error', 'consistent'],
-	'@stylistic/array-bracket-spacing': [
+	'@stylistic/js/array-bracket-newline': ['error', 'consistent'],
+	'@stylistic/js/array-bracket-spacing': [
 		'error',
 		'never',
 		{
@@ -165,20 +167,20 @@ const rules: TSESLint.FlatConfig.Rules = {
 			arraysInArrays: false
 		}
 	],
-	'@stylistic/arrow-spacing': ['error', { before: true, after: true }],
-	'@stylistic/block-spacing': ['error', 'always'],
-	'@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-	'@stylistic/comma-dangle': ['error', 'never'],
-	'@stylistic/comma-spacing': ['error', { before: false, after: true }],
-	'@stylistic/comma-style': ['error', 'last'],
-	'@stylistic/computed-property-spacing': ['error', 'never'],
-	'@stylistic/dot-location': ['error', 'property'],
-	'@stylistic/eol-last': ['error', 'always'],
-	'@stylistic/func-call-spacing': ['error', 'never'],
-	'@stylistic/generator-star-spacing': ['error', 'before'],
-	'@stylistic/jsx-quotes': ['error', 'prefer-double'],
-	'@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true, mode: 'strict' }],
-	'@stylistic/keyword-spacing': [
+	'@stylistic/js/arrow-spacing': ['error', { before: true, after: true }],
+	'@stylistic/js/block-spacing': ['error', 'always'],
+	'@stylistic/js/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+	'@stylistic/js/comma-dangle': ['error', 'never'],
+	'@stylistic/js/comma-spacing': ['error', { before: false, after: true }],
+	'@stylistic/js/comma-style': ['error', 'last'],
+	'@stylistic/js/computed-property-spacing': ['error', 'never'],
+	'@stylistic/js/dot-location': ['error', 'property'],
+	'@stylistic/js/eol-last': ['error', 'always'],
+	'@stylistic/js/func-call-spacing': ['error', 'never'],
+	'@stylistic/js/generator-star-spacing': ['error', 'before'],
+	'@stylistic/js/jsx-quotes': ['error', 'prefer-double'],
+	'@stylistic/js/key-spacing': ['error', { beforeColon: false, afterColon: true, mode: 'strict' }],
+	'@stylistic/js/keyword-spacing': [
 		'error',
 		{
 			overrides: {
@@ -200,9 +202,9 @@ const rules: TSESLint.FlatConfig.Rules = {
 			}
 		}
 	],
-	'@stylistic/linebreak-style': ['error', 'unix'],
-	'@stylistic/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-	'@stylistic/max-len': [
+	'@stylistic/js/linebreak-style': ['error', 'unix'],
+	'@stylistic/js/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+	'@stylistic/js/max-len': [
 		'error',
 		{
 			code: 150,
@@ -211,28 +213,28 @@ const rules: TSESLint.FlatConfig.Rules = {
 			ignoreTemplateLiterals: true
 		}
 	],
-	'@stylistic/max-statements-per-line': ['error', { max: 2 }],
-	'@stylistic/multiline-ternary': ['error', 'always-multiline'],
-	'@stylistic/new-parens': 'error',
-	'@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 6 }],
-	'@stylistic/no-extra-semi': 'error',
-	'@stylistic/no-floating-decimal': 'error',
-	'@stylistic/no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-	'@stylistic/no-multi-spaces': ['error', { ignoreEOLComments: true }],
-	'@stylistic/no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1, maxBOF: 0 }],
-	'@stylistic/no-trailing-spaces': 'error',
-	'@stylistic/no-whitespace-before-property': 'error',
-	'@stylistic/object-curly-newline': ['error', { multiline: true, consistent: true }],
-	'@stylistic/object-curly-spacing': ['error', 'always'],
-	'@stylistic/operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
-	'@stylistic/padded-blocks': ['error', 'never'],
-	'@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-	'@stylistic/rest-spread-spacing': ['error', 'never'],
-	'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
-	'@stylistic/semi-spacing': ['error', { before: false, after: true }],
-	'@stylistic/semi-style': ['error', 'last'],
-	'@stylistic/space-before-blocks': ['error', 'always'],
-	'@stylistic/space-before-function-paren': [
+	'@stylistic/js/max-statements-per-line': ['error', { max: 2 }],
+	'@stylistic/js/multiline-ternary': ['error', 'always-multiline'],
+	'@stylistic/js/new-parens': 'error',
+	'@stylistic/js/newline-per-chained-call': ['error', { ignoreChainWithDepth: 6 }],
+	'@stylistic/js/no-extra-semi': 'error',
+	'@stylistic/js/no-floating-decimal': 'error',
+	'@stylistic/js/no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+	'@stylistic/js/no-multi-spaces': ['error', { ignoreEOLComments: true }],
+	'@stylistic/js/no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1, maxBOF: 0 }],
+	'@stylistic/js/no-trailing-spaces': 'error',
+	'@stylistic/js/no-whitespace-before-property': 'error',
+	'@stylistic/js/object-curly-newline': ['error', { multiline: true, consistent: true }],
+	'@stylistic/js/object-curly-spacing': ['error', 'always'],
+	'@stylistic/js/operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
+	'@stylistic/js/padded-blocks': ['error', 'never'],
+	'@stylistic/js/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+	'@stylistic/js/rest-spread-spacing': ['error', 'never'],
+	'@stylistic/js/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
+	'@stylistic/js/semi-spacing': ['error', { before: false, after: true }],
+	'@stylistic/js/semi-style': ['error', 'last'],
+	'@stylistic/js/space-before-blocks': ['error', 'always'],
+	'@stylistic/js/space-before-function-paren': [
 		'error',
 		{
 			anonymous: 'never',
@@ -240,15 +242,17 @@ const rules: TSESLint.FlatConfig.Rules = {
 			asyncArrow: 'always'
 		}
 	],
-	'@stylistic/space-in-parens': ['error', 'never'],
-	'@stylistic/space-infix-ops': ['error', { int32Hint: true }],
-	'@stylistic/space-unary-ops': ['error', { words: true, nonwords: false }],
-	'@stylistic/spaced-comment': ['error', 'always'],
-	'@stylistic/switch-colon-spacing': ['error', { after: true, before: false }],
-	'@stylistic/template-curly-spacing': ['error', 'never'],
-	'@stylistic/template-tag-spacing': ['error', 'never'],
-	'@stylistic/wrap-iife': ['error', 'inside'],
-	'@stylistic/yield-star-spacing': ['error', 'before'],
+	'@stylistic/js/space-in-parens': ['error', 'never'],
+	'@stylistic/js/space-infix-ops': ['error', { int32Hint: true }],
+	'@stylistic/js/space-unary-ops': ['error', { words: true, nonwords: false }],
+	'@stylistic/js/spaced-comment': ['error', 'always'],
+	'@stylistic/js/switch-colon-spacing': ['error', { after: true, before: false }],
+	'@stylistic/js/template-curly-spacing': ['error', 'never'],
+	'@stylistic/js/template-tag-spacing': ['error', 'never'],
+	'@stylistic/js/wrap-iife': ['error', 'inside'],
+	'@stylistic/js/yield-star-spacing': ['error', 'before'],
+
+	'@stylistic/plus/curly-newline': ['error', { multiline: true }],
 
 	'import-x/default': 'error',
 	'import-x/export': 'error',
@@ -288,7 +292,9 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			'@stylistic': pluginStylistic,
+			'@stylistic/js': pluginStylistic,
+			'@stylistic/ts': pluginStylisticTs,
+			'@stylistic/plus': pluginStylisticPlus,
 			'import-x': pluginImport
 		},
 		rules,
