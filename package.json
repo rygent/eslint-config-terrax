@@ -180,7 +180,7 @@
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^9.22.0"
   },
   "files": [
     "./dist/"
