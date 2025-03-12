@@ -255,8 +255,6 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'@stylistic/js/wrap-iife': ['error', 'inside'],
 	'@stylistic/js/yield-star-spacing': ['error', 'before'],
 
-	'@stylistic/plus/curly-newline': ['error', { multiline: true }],
-
 	'import-x/default': 'error',
 	'import-x/export': 'error',
 	'import-x/extensions': 'off',
@@ -267,9 +265,8 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'import-x/no-named-as-default-member': 'warn',
 	'import-x/no-unresolved': 'off',
 
-	'promise/param-names': 'error',
+	'promise/param-names': 'warn',
 	'promise/prefer-await-to-callbacks': 'warn',
-	'promise/prefer-await-to-then': 'error',
 	'promise/valid-params': 'warn'
 };
 
