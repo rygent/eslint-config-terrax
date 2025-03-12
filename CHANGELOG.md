@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.4.0](https://github.com/rygent/eslint-config-terrax/compare/0.3.4...0.4.0) - (2025-03-12)
+
+## Bug Fixes
+
+- Remove conflict rules ([785c106](https://github.com/rygent/eslint-config-terrax/commit/785c106917cc9e0aeebb29c0247bc6a5f0419d11)) by @rygent
+
+## Features
+
+- Support prettier config ([cc2e192](https://github.com/rygent/eslint-config-terrax/commit/cc2e19252497b1c4e3952bb8446022e29905487d)) by @rygent
+
+## Refactor
+
+- Add more rules ([d5f5a0e](https://github.com/rygent/eslint-config-terrax/commit/d5f5a0ebc43770bedae54f79d900792ace540a94)) by @rygent
+- Update stylistic rules ([c1976c4](https://github.com/rygent/eslint-config-terrax/commit/c1976c409a0bf814f2dc1df3702ed3a9fb2d15a6)) by @rygent
+
 # [0.3.4](https://github.com/rygent/eslint-config-terrax/compare/0.3.3...0.3.4) - (2025-01-11)
 
 ## Refactor
