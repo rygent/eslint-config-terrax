@@ -1,6 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import type { ESLint } from 'eslint';
 import { fixupPluginRules } from '@eslint/compat';
-// @ts-expect-error eslint-plugin-jsx-a11y is not typed
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -12,10 +12,13 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'jsx-a11y/role-supports-aria-props': 'warn'
 };
 
+/**
+ * The ESLint configuration for usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)) and want to include [accessibility checks](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y).
+ */
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			'jsx-a11y': fixupPluginRules(pluginJsxA11y)
+			'jsx-a11y': fixupPluginRules(pluginJsxA11y as ESLint.Plugin)
 		},
 		rules
 	}

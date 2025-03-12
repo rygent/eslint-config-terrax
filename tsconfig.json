@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "outDir": "./dist/",
-    "removeComments": true,
+    "removeComments": false,
     "importHelpers": true,
     "downlevelIteration": true,
     "preserveConstEnums": true,

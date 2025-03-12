@@ -1,5 +1,4 @@
 import type { TSESLint } from '@typescript-eslint/utils';
-import type { ESLint } from 'eslint';
 import pluginReact from 'eslint-plugin-react';
 
 const rules: TSESLint.FlatConfig.Rules = {
@@ -42,6 +41,9 @@ const settings: TSESLint.FlatConfig.Settings = {
 	}
 };
 
+/**
+ * The ESLint configuration for usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)).
+ */
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		languageOptions: {
@@ -52,7 +54,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			react: pluginReact as ESLint.Plugin
+			react: pluginReact
 		},
 		rules,
 		settings

@@ -153,19 +153,24 @@
     "@stylistic/eslint-plugin": "^4.2.0",
     "@stylistic/eslint-plugin-plus": "^4.2.0",
     "@stylistic/eslint-plugin-ts": "^4.2.0",
+    "@types/lodash.merge": "^4.6.9",
     "eslint-config-prettier": "^10.1.1",
     "eslint-import-resolver-typescript": "^3.8.3",
     "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-n": "^17.16.2",
     "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "globals": "^16.0.0",
+    "lodash.merge": "^4.6.2",
     "typescript-eslint": "^8.26.0"
   },
   "devDependencies": {
     "@favware/cliff-jumper": "^6.0.0",
     "@sapphire/node-utilities": "^1.0.2",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.13.10",
     "esbuild-plugin-file-path-extensions": "^2.1.4",
     "eslint": "^9.22.0",
@@ -173,6 +178,9 @@
     "tsup": "^8.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
   },
   "files": [
     "./dist/"

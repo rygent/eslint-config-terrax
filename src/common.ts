@@ -4,6 +4,9 @@ import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginStylisticTs from '@stylistic/eslint-plugin-ts';
 import pluginStylisticPlus from '@stylistic/eslint-plugin-plus';
 import pluginImport from 'eslint-plugin-import-x';
+// @ts-expect-error eslint-plugin-promise is not typed
+import pluginPromise from 'eslint-plugin-promise';
+import globals from 'globals';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'accessor-pairs': 'warn',
@@ -262,7 +265,12 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'import-x/no-duplicates': 'warn',
 	'import-x/no-named-as-default': 'warn',
 	'import-x/no-named-as-default-member': 'warn',
-	'import-x/no-unresolved': 'off'
+	'import-x/no-unresolved': 'off',
+
+	'promise/param-names': 'error',
+	'promise/prefer-await-to-callbacks': 'warn',
+	'promise/prefer-await-to-then': 'error',
+	'promise/valid-params': 'warn'
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
@@ -274,6 +282,9 @@ const settings: TSESLint.FlatConfig.Settings = {
 	}
 };
 
+/**
+ * The ESLint configuration for usage with JavaScript.
+ */
 const config: TSESLint.FlatConfig.ConfigArray = [
 	eslint.configs.recommended,
 	{
@@ -283,6 +294,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
+			globals: globals.builtin,
 			parserOptions: {
 				requireConfigFile: false,
 				ecmaFeatures: {
@@ -295,7 +307,8 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			'@stylistic/js': pluginStylistic,
 			'@stylistic/ts': pluginStylisticTs,
 			'@stylistic/plus': pluginStylisticPlus,
-			'import-x': pluginImport
+			'import-x': pluginImport,
+			promise: pluginPromise
 		},
 		rules,
 		settings

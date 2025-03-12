@@ -9,6 +9,12 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-inline-comments': 'off'
 };
 
+/**
+ * The ESLint configuration for usage with Prettier.
+ *
+ * @note This configuration should be used in the last configuration array. Otherwise, it might not work as expected.
+ * @see https://prettier.io/docs/en/integrating-with-linters.html#recommended-configuration
+ */
 const config: TSESLint.FlatConfig.ConfigArray = [
 	eslintConfigPrettier,
 	{

@@ -30,6 +30,9 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'import-x/extensions': 'off'
 };
 
+/**
+ * The ESLint configuration for usage with [Next.js](https://nextjs.org/).
+ */
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
