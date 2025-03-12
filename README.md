@@ -36,6 +36,7 @@ Package includes the following configurations:
 | [`eslint-config-terrax/jsx-a11y`](./src/jsx-a11y.ts)     | For usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)) and want to include [accessibility checks](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y). |
 | [`eslint-config-terrax/next`](./src/next.ts)             | For usage with [Next.js](https://nextjs.org/).                                                                                                                                                            |
 | [`eslint-config-terrax/node`](./src/node.ts)             | For usage with Node.js.                                                                                                                                                                                   |
+| [`eslint-config-terrax/prettier`](./src/prettier.ts)     | For usage with [Prettier](https://prettier.io/).                                                                                                                                                          |
 | [`eslint-config-terrax/react`](./src/react.ts)           | For usage with [React](https://reactjs.org/).                                                                                                                                                             |
 | [`eslint-config-terrax/typescript`](./src/typescript.ts) | For usage with [TypeScript](http://typescriptlang.org/).                                                                                                                                                  |
 
@@ -118,6 +119,16 @@ const config = [
 ];
 
 export default config;
+```
+
+### Usage with Prettier
+
+Just add it as the last config in your `extends` configuration, e.g.
+
+```js
+import { common, typescript, prettier } from 'eslint-config-terrax';
+
+export default [...common, ...typescript, ...prettier];
 ```
 
 [ESLint Flat Config]: https://eslint.org/blog/2022/08/new-config-system-part-2/

@@ -2,7 +2,7 @@ import tseslint from 'typescript-eslint';
 import common from './dist/esm/common.mjs';
 import node from './dist/esm/node.mjs';
 import typescript from './dist/esm/typescript.mjs';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import prettier from './dist/esm/prettier.mjs';
 
 export default tseslint.config(
 	...common,
@@ -15,5 +15,5 @@ export default tseslint.config(
 			}
 		}
 	},
-	eslintPluginPrettierRecommended
+	...prettier
 );
