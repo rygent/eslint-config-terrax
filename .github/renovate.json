@@ -19,14 +19,15 @@
       "dependencyDashboardApproval": true
     },
     {
-      "semanticCommitType": "chore",
+      "matchPackageNames": ["*"],
+      "addLabels": ["dependencies"],
+      "automerge": true,
       "commitMessageAction": "Bump",
       "commitMessageExtra": "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newValue}}{{{prettyNewVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}",
       "commitMessageTopic": "{{depName}}",
       "rangeStrategy": "bump",
       "recreateWhen": "always",
-      "addLabels": ["dependencies"],
-      "matchPackageNames": ["*"]
+      "semanticCommitType": "chore"
     },
     {
       "matchDepTypes": ["dependencies", "require"],
@@ -37,11 +38,15 @@
       "semanticCommitScope": "deps-dev"
     },
     {
+      "matchDepTypes": ["peerDependencies"],
+      "enabled": false
+    },
+    {
       "matchDepTypes": ["action"],
-      "semanticCommitType": "ci",
-      "semanticCommitScope": null,
       "addLabels": ["ci"],
-      "automerge": true
+      "automerge": true,
+      "semanticCommitScope": null,
+      "semanticCommitType": "ci"
     },
     {
       "matchUpdateTypes": ["lockFileMaintenance"],
@@ -56,6 +61,7 @@
   ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 5,
+  "reviewers": ["@rygent"],
   "schedule": ["every weekend"],
   "vulnerabilityAlerts": {
     "enabled": true,
