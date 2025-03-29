@@ -3,6 +3,7 @@
   "extends": ["config:recommended"],
   "lockFileMaintenance": {
     "enabled": true,
+    "automerge": false,
     "dependencyDashboardApproval": true,
     "recreateWhen": "always",
     "rebaseWhen": "behind-base-branch",
@@ -16,6 +17,7 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
+      "automerge": false,
       "dependencyDashboardApproval": true
     },
     {
