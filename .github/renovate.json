@@ -3,7 +3,6 @@
   "extends": ["config:recommended"],
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": false,
     "dependencyDashboardApproval": true,
     "recreateWhen": "always",
     "rebaseWhen": "behind-base-branch",
@@ -17,13 +16,15 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
-      "automerge": false,
       "dependencyDashboardApproval": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
     },
     {
       "matchPackageNames": ["*"],
       "addLabels": ["dependencies"],
-      "automerge": true,
       "commitMessageAction": "Bump",
       "commitMessageExtra": "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if newValue}}{{{prettyNewVersion}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}",
       "commitMessageTopic": "{{depName}}",
@@ -63,7 +64,7 @@
   ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 5,
-  "reviewers": ["@rygent"],
+  "reviewers": ["rygent"],
   "schedule": ["every weekend"],
   "vulnerabilityAlerts": {
     "enabled": true,
