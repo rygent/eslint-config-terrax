@@ -148,7 +148,7 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.2.9",
-    "@eslint/js": "^9.27.0",
+    "@eslint/js": "^9.28.0",
     "@next/eslint-plugin-next": "^15.3.3",
     "@stylistic/eslint-plugin": "^4.4.0",
     "@stylistic/eslint-plugin-plus": "^4.4.0",
@@ -173,7 +173,7 @@
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.15.29",
     "esbuild-plugin-file-path-extensions": "^2.1.4",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "prettier": "^3.5.3",
     "tsup": "^8.5.0",
     "tsx": "^4.19.4",
