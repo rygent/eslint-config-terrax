@@ -1,0 +1,10 @@
+autoInstallPeers: true
+
+onlyBuiltDependencies:
+  - 'esbuild'
+  - 'unrs-resolver'
+
+publicHoistPattern:
+  - '*typescript-eslint*'
+
+resolutionMode: 'highest'
