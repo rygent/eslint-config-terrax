@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.4.1](https://github.com/rygent/eslint-config-terrax/compare/0.4.0...0.4.1) - (2025-06-26)
+
+## Refactor
+
+- Remove stylistic subpackages (#200) ([3d80487](https://github.com/rygent/eslint-config-terrax/commit/3d8048716731813f3597daeb8f6437c4b3957f13)) by @rygent
+
 # [0.4.0](https://github.com/rygent/eslint-config-terrax/compare/0.3.4...0.4.0) - (2025-03-12)
 
 ## Bug Fixes
