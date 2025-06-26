@@ -124,72 +124,10 @@ const rules: TSESLint.FlatConfig.Rules = {
 	'no-useless-constructor': 'off',
 	'require-await': 'off',
 
-	'@stylistic/js/block-spacing': 'off',
-	'@stylistic/js/brace-style': 'off',
-	'@stylistic/js/comma-dangle': 'off',
-	'@stylistic/js/comma-spacing': 'off',
-	'@stylistic/js/func-call-spacing': 'off',
-	'@stylistic/js/key-spacing': 'off',
-	'@stylistic/js/keyword-spacing': 'off',
-	'@stylistic/js/lines-between-class-members': 'off',
-	'@stylistic/js/no-extra-semi': 'off',
-	'@stylistic/js/object-curly-newline': 'off',
-	'@stylistic/js/object-curly-spacing': 'off',
-	'@stylistic/js/quotes': 'off',
-	'@stylistic/js/semi': 'off',
-	'@stylistic/js/semi-spacing': 'off',
-	'@stylistic/js/space-before-blocks': 'off',
-	'@stylistic/js/space-before-function-paren': 'off',
-
-	'@stylistic/ts/block-spacing': ['error', 'always'],
-	'@stylistic/ts/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-	'@stylistic/ts/comma-dangle': ['error', 'never'],
-	'@stylistic/ts/comma-spacing': ['error', { before: false, after: true }],
-	'@stylistic/ts/func-call-spacing': ['error', 'never'],
-	'@stylistic/ts/key-spacing': ['error', { beforeColon: false, afterColon: true, mode: 'strict' }],
-	'@stylistic/ts/keyword-spacing': [
-		'error',
-		{
-			overrides: {
-				if: {
-					after: true
-				},
-				for: {
-					after: true
-				},
-				while: {
-					after: true
-				},
-				catch: {
-					after: true
-				},
-				switch: {
-					after: true
-				}
-			}
-		}
-	],
-	'@stylistic/ts/lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
-	'@stylistic/ts/member-delimiter-style': 'error',
-	'@stylistic/ts/no-extra-semi': 'error',
-	'@stylistic/ts/object-curly-newline': ['error', { multiline: true, consistent: true }],
-	'@stylistic/ts/object-curly-spacing': ['error', 'always'],
-	'@stylistic/ts/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-	'@stylistic/ts/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
-	'@stylistic/ts/semi-spacing': ['error', { before: false, after: true }],
-	'@stylistic/ts/space-before-blocks': ['error', 'always'],
-	'@stylistic/ts/space-before-function-paren': [
-		'error',
-		{
-			anonymous: 'never',
-			named: 'never',
-			asyncArrow: 'always'
-		}
-	],
-	'@stylistic/ts/type-annotation-spacing': 'error',
-
-	'@stylistic/plus/type-generic-spacing': 'error',
-	'@stylistic/plus/type-named-tuple-spacing': 'error',
+	'@stylistic/member-delimiter-style': 'error',
+	'@stylistic/type-annotation-spacing': 'error',
+	'@stylistic/type-generic-spacing': 'error',
+	'@stylistic/type-named-tuple-spacing': 'error',
 
 	'import-x/no-dynamic-require': 'off',
 	'import-x/no-unresolved': 'off'
