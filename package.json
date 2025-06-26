@@ -153,7 +153,7 @@
     "@stylistic/eslint-plugin": "^5.0.0",
     "@types/lodash.merge": "^4.6.9",
     "eslint-config-prettier": "^10.1.5",
-    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.15.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^17.20.0",
