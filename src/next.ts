@@ -1,6 +1,4 @@
 import type { TSESLint } from '@typescript-eslint/utils';
-import { fixupPluginRules } from '@eslint/compat';
-// @ts-expect-error @next/eslint-plugin-next is not typed
 import pluginNext from '@next/eslint-plugin-next';
 import jsxa11y from './jsx-a11y';
 
@@ -36,7 +34,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			'@next/next': fixupPluginRules(pluginNext)
+			'@next/next': pluginNext
 		},
 		rules
 	},
