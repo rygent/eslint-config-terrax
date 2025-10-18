@@ -169,7 +169,7 @@
     "@favware/cliff-jumper": "^6.0.0",
     "@sapphire/node-utilities": "^1.0.2",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@types/node": "^22.18.10",
+    "@types/node": "^22.18.11",
     "esbuild-plugin-file-path-extensions": "^2.1.4",
     "eslint": "^9.37.0",
     "prettier": "^3.6.2",
