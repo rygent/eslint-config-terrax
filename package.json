@@ -147,7 +147,7 @@
     "url": "https://github.com/rygent/eslint-config-terrax/issues"
   },
   "dependencies": {
-    "@eslint/compat": "^1.4.1",
+    "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.2",
     "@next/eslint-plugin-next": "^15.5.9",
     "@stylistic/eslint-plugin": "^5.6.1",
