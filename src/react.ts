@@ -1,7 +1,5 @@
 import type { TSESLint } from '@typescript-eslint/utils';
-import { fixupPluginRules } from '@eslint/compat';
 import pluginReact from 'eslint-plugin-react';
-// eslint-disable-next-line import-x/default
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import jsx from './jsx';
 
@@ -29,7 +27,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
 			react: pluginReact,
-			'react-hooks': fixupPluginRules(pluginReactHooks)
+			'react-hooks': pluginReactHooks
 		},
 		rules,
 		settings
