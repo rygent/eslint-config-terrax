@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.5.0](https://github.com/rygent/eslint-config-terrax/compare/0.4.2...0.5.0) - (2026-01-01)
+
+## Features
+
+- Deprecate node 18 ([0fd72c6](https://github.com/rygent/eslint-config-terrax/commit/0fd72c678847bf28bae86741243c023b5c7deb56)) by @rygent
+
 # [0.4.2](https://github.com/rygent/eslint-config-terrax/compare/0.4.1...0.4.2) - (2025-08-02)
 
 # [0.4.1](https://github.com/rygent/eslint-config-terrax/compare/0.4.0...0.4.1) - (2025-06-26)
