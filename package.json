@@ -149,7 +149,7 @@
   "dependencies": {
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
-    "@next/eslint-plugin-next": "^15.5.9",
+    "@next/eslint-plugin-next": "^15.5.11",
     "@stylistic/eslint-plugin": "^5.7.1",
     "@types/lodash.merge": "^4.6.9",
     "eslint-config-prettier": "^10.1.8",
