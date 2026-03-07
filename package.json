@@ -148,7 +148,7 @@
   },
   "dependencies": {
     "@eslint/compat": "^2.0.3",
-    "@eslint/js": "^9.39.3",
+    "@eslint/js": "^9.39.4",
     "@next/eslint-plugin-next": "^16.1.6",
     "@stylistic/eslint-plugin": "^5.9.0",
     "@types/lodash.merge": "^4.6.9",
@@ -171,7 +171,7 @@
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^24.11.0",
     "esbuild-plugin-file-path-extensions": "^2.1.4",
-    "eslint": "^9.39.3",
+    "eslint": "^9.39.4",
     "prettier": "^3.8.1",
     "tsup": "^8.5.1",
     "tsx": "^4.21.0",
