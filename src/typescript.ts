@@ -154,7 +154,7 @@ const settings: TSESLint.FlatConfig.Settings = {
 /**
  * The ESLint configuration for TypeScript.
  */
-const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
+const config: TSESLint.FlatConfig.ConfigArray = [
 	...tseslint.configs.recommended,
 	...tseslint.configs.recommendedTypeChecked,
 	...tseslint.configs.stylistic,
@@ -163,6 +163,6 @@ const config: TSESLint.FlatConfig.ConfigArray = tseslint.config(
 		rules,
 		settings
 	}
-);
+];
 
 export default config;

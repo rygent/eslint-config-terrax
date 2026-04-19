@@ -1,4 +1,5 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import { fixupPluginRules } from '@eslint/compat';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import jsx from './jsx';
@@ -26,7 +27,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 	...jsx,
 	{
 		plugins: {
-			react: pluginReact,
+			react: fixupPluginRules(pluginReact),
 			'react-hooks': pluginReactHooks
 		},
 		rules,

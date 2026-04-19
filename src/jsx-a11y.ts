@@ -1,5 +1,4 @@
 import type { TSESLint } from '@typescript-eslint/utils';
-import type { ESLint } from 'eslint';
 import { fixupPluginRules } from '@eslint/compat';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 
@@ -18,7 +17,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			'jsx-a11y': fixupPluginRules(pluginJsxA11y as ESLint.Plugin)
+			'jsx-a11y': fixupPluginRules(pluginJsxA11y)
 		},
 		rules
 	}

@@ -1,5 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 import eslint from '@eslint/js';
+import { fixupPluginRules } from '@eslint/compat';
 import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginImport from 'eslint-plugin-import-x';
 // @ts-expect-error eslint-plugin-promise is not typed
@@ -301,7 +302,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 		plugins: {
 			'@stylistic': pluginStylistic,
 			'import-x': pluginImport,
-			promise: pluginPromise
+			promise: fixupPluginRules(pluginPromise)
 		},
 		rules,
 		settings

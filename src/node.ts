@@ -1,4 +1,5 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import { fixupPluginRules } from '@eslint/compat';
 import pluginNode from 'eslint-plugin-n';
 import globals from 'globals';
 
@@ -84,7 +85,7 @@ const config: TSESLint.FlatConfig.ConfigArray = [
 			}
 		},
 		plugins: {
-			n: pluginNode
+			n: fixupPluginRules(pluginNode)
 		},
 		rules
 	}

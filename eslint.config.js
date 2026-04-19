@@ -1,10 +1,10 @@
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 import common from './dist/esm/common.mjs';
 import node from './dist/esm/node.mjs';
 import typescript from './dist/esm/typescript.mjs';
 import prettier from './dist/esm/prettier.mjs';
 
-export default tseslint.config(
+export default defineConfig(
 	...common,
 	...node,
 	...typescript,
@@ -13,6 +13,11 @@ export default tseslint.config(
 			parserOptions: {
 				project: './tsconfig.eslint.json'
 			}
+		}
+	},
+	{
+		rules: {
+			'import-x/no-named-as-default-member': 'off'
 		}
 	},
 	...prettier
