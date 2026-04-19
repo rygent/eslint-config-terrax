@@ -2,21 +2,28 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import { fixupPluginRules } from '@eslint/compat';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import jsx from './jsx';
+import globals from 'globals';
 
 const rules: TSESLint.FlatConfig.Rules = {
-	'react/no-unknown-property': 'off',
-	'react/react-in-jsx-scope': 'off',
-	'react/prop-types': 'off',
-	'react/jsx-no-target-blank': 'off',
-
-	'react-hooks/rules-of-hooks': 'error',
-	'react-hooks/exhaustive-deps': 'warn'
+	...pluginReact.configs.recommended.rules,
+	...pluginReactHooks.configs.recommended.rules
 };
 
 const settings: TSESLint.FlatConfig.Settings = {
 	react: {
 		version: 'detect'
+	},
+	'import-x/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+	'import-x/parsers': {
+		'@typescript-eslint/parser': ['.ts', '.mts', '.cts', '.tsx', '.d.ts']
+	},
+	'import-x/resolver': {
+		node: {
+			extensions: ['.js', '.jsx', '.ts', '.tsx']
+		},
+		typescript: {
+			alwaysTryTypes: true
+		}
 	}
 };
 
@@ -24,8 +31,17 @@ const settings: TSESLint.FlatConfig.Settings = {
  * The ESLint configuration for usage with [React](https://reactjs.org/).
  */
 const config: TSESLint.FlatConfig.ConfigArray = [
-	...jsx,
 	{
+		languageOptions: {
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				}
+			},
+			globals: {
+				...globals.browser
+			}
+		},
 		plugins: {
 			react: fixupPluginRules(pluginReact),
 			'react-hooks': pluginReactHooks

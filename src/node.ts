@@ -4,6 +4,30 @@ import pluginNode from 'eslint-plugin-n';
 import globals from 'globals';
 
 const rules: TSESLint.FlatConfig.Rules = {
+	'n/no-deprecated-api': 'error',
+	'n/no-exports-assign': 'error',
+	'n/no-unpublished-bin': 'error',
+	'n/prefer-global/buffer': ['error', 'never'],
+	'n/prefer-global/console': ['error', 'always'],
+	'n/prefer-global/process': ['error', 'never'],
+	'n/prefer-global/text-decoder': ['error', 'never'],
+	'n/prefer-global/text-encoder': ['error', 'never'],
+	'n/prefer-global/url': ['error', 'never'],
+	'n/prefer-global/url-search-params': ['error', 'never'],
+
+	'n/prefer-node-protocol': 'warn',
+
+	'n/no-extraneous-import': 'off',
+	'n/no-extraneous-require': 'off',
+	'n/no-missing-import': 'off',
+	'n/no-missing-require': 'off',
+	'n/no-process-exit': 'off',
+	'n/no-unpublished-import': 'off',
+	'n/no-unpublished-require': 'off',
+	'n/no-unsupported-features/es-builtins': 'off',
+	'n/no-unsupported-features/es-syntax': 'off',
+	'n/no-unsupported-features/node-builtins': 'off',
+
 	'no-restricted-globals': [
 		'error',
 		{
@@ -40,29 +64,7 @@ const rules: TSESLint.FlatConfig.Rules = {
 		}
 	],
 
-	'import-x/no-unresolved': 'off',
-
-	'n/no-deprecated-api': 'error',
-	'n/no-exports-assign': 'error',
-	'n/no-extraneous-import': 'off',
-	'n/no-extraneous-require': 'off',
-	'n/no-missing-import': 'off',
-	'n/no-missing-require': 'off',
-	'n/no-process-exit': 'off',
-	'n/no-unpublished-bin': 'error',
-	'n/no-unpublished-import': 'off',
-	'n/no-unpublished-require': 'off',
-	'n/no-unsupported-features/es-builtins': 'off',
-	'n/no-unsupported-features/es-syntax': 'off',
-	'n/no-unsupported-features/node-builtins': 'off',
-	'n/prefer-global/buffer': ['error', 'never'],
-	'n/prefer-global/console': ['error', 'always'],
-	'n/prefer-global/process': ['error', 'never'],
-	'n/prefer-global/text-decoder': ['error', 'never'],
-	'n/prefer-global/text-encoder': ['error', 'never'],
-	'n/prefer-global/url': ['error', 'never'],
-	'n/prefer-global/url-search-params': ['error', 'never'],
-	'n/prefer-node-protocol': 'warn'
+	'import-x/no-unresolved': 'off'
 };
 
 /**

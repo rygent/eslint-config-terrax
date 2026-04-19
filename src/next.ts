@@ -1,29 +1,24 @@
 import type { TSESLint } from '@typescript-eslint/utils';
+import { fixupPluginRules } from '@eslint/compat';
 import pluginNext from '@next/eslint-plugin-next';
-import jsxa11y from './jsx-a11y';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
 
 const rules: TSESLint.FlatConfig.Rules = {
-	'@next/next/google-font-display': 'warn',
-	'@next/next/google-font-preconnect': 'warn',
-	'@next/next/inline-script-id': 'error',
-	'@next/next/next-script-for-ga': 'warn',
-	'@next/next/no-assign-module-variable': 'error',
-	'@next/next/no-async-client-component': 'warn',
-	'@next/next/no-before-interactive-script-outside-document': 'warn',
-	'@next/next/no-css-tags': 'warn',
-	'@next/next/no-document-import-in-page': 'error',
-	'@next/next/no-duplicate-head': 'error',
-	'@next/next/no-head-element': 'warn',
-	'@next/next/no-head-import-in-document': 'error',
-	'@next/next/no-html-link-for-pages': 'error',
-	'@next/next/no-img-element': 'warn',
-	'@next/next/no-page-custom-font': 'warn',
-	'@next/next/no-script-component-in-head': 'error',
-	'@next/next/no-styled-jsx-in-document': 'warn',
-	'@next/next/no-sync-scripts': 'error',
-	'@next/next/no-title-in-document-head': 'warn',
-	'@next/next/no-typos': 'warn',
-	'@next/next/no-unwanted-polyfillio': 'warn',
+	...pluginNext.configs.recommended.rules,
+
+	'react/no-unknown-property': 'off',
+	'react/react-in-jsx-scope': 'off',
+	'react/prop-types': 'off',
+	'react/jsx-no-target-blank': 'off',
+
+	'jsx-a11y/alt-text': ['warn', { elements: ['img'], img: ['Image'] }],
+	'jsx-a11y/aria-props': 'warn',
+	'jsx-a11y/aria-proptypes': 'warn',
+	'jsx-a11y/aria-unsupported-elements': 'warn',
+	'jsx-a11y/role-has-required-aria-props': 'warn',
+	'jsx-a11y/role-supports-aria-props': 'warn',
+
+	'import-x/no-anonymous-default-export': 'warn',
 
 	'import-x/extensions': 'off'
 };
@@ -34,11 +29,11 @@ const rules: TSESLint.FlatConfig.Rules = {
 const config: TSESLint.FlatConfig.ConfigArray = [
 	{
 		plugins: {
-			'@next/next': pluginNext
+			'@next/next': pluginNext,
+			'jsx-a11y': fixupPluginRules(pluginJsxA11y)
 		},
 		rules
-	},
-	...jsxa11y
+	}
 ];
 
 export default config;

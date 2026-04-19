@@ -30,10 +30,7 @@ Package includes the following configurations:
 | Configuration                                            | Description                                                                                                                                                                                               |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`eslint-config-terrax/common`](./src/common.ts)         | The terrax code style guide.                                                                                                                                                                              |
-| [`eslint-config-terrax/browser`](./src/browser.ts)       | For usage with DOM and other browser APIs.                                                                                                                                                                |
 | [`eslint-config-terrax/edge`](./src/edge.ts)             | For usage with an edge runtime [Vercel](https://vercel.com/blog/introducing-the-edge-runtime), [Cloudflare Workers](https://workers.cloudflare.com/), or others.                                          |
-| [`eslint-config-terrax/jsx`](./src/jsx.ts)               | For usage with [JSX](https://reactjs.org/docs/introducing-jsx.html) (with or without [React](https://reactjs.org/)).                                                                                      |
-| [`eslint-config-terrax/jsx-a11y`](./src/jsx-a11y.ts)     | For usage with [JSX](https://facebook.github.io/react/) (with or without [React](https://reactjs.org/)) and want to include [accessibility checks](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y). |
 | [`eslint-config-terrax/next`](./src/next.ts)             | For usage with [Next.js](https://nextjs.org/).                                                                                                                                                            |
 | [`eslint-config-terrax/node`](./src/node.ts)             | For usage with Node.js.                                                                                                                                                                                   |
 | [`eslint-config-terrax/prettier`](./src/prettier.ts)     | For usage with [Prettier](https://prettier.io/).                                                                                                                                                          |
@@ -94,21 +91,16 @@ export default config;
 ### NextJS
 
 ```js
-import { browser, common, edge, next, node, react, typescript } from 'eslint-config-terrax';
+import { common, next, node, react, typescript } from 'eslint-config-terrax';
 import merge from 'lodash.merge';
 
 /**
  * @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray}
  */
 const config = [
-    ...[...common, ...browser, ...node, ...typescript, ...react, ...next, ...edge].map((config) =>
+    ...[...common, ...node, ...typescript, ...react, ...next].map((config) =>
         merge(config, {
             files: ['src/**/*.ts'],
-            settings: {
-                react: {
-                    version: 'detect'
-                }
-            },
             languageOptions: {
                 parserOptions: {
                     project: 'tsconfig.json'

@@ -17,16 +17,6 @@
         "default": "./dist/cjs/index.cjs"
       }
     },
-    "./browser": {
-      "import": {
-        "types": "./dist/esm/browser.d.mts",
-        "default": "./dist/esm/browser.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/browser.d.cts",
-        "default": "./dist/cjs/browser.cjs"
-      }
-    },
     "./common": {
       "import": {
         "types": "./dist/esm/common.d.mts",
@@ -45,26 +35,6 @@
       "require": {
         "types": "./dist/cjs/edge.d.cts",
         "default": "./dist/cjs/edge.cjs"
-      }
-    },
-    "./jsx-a11y": {
-      "import": {
-        "types": "./dist/esm/jsx-a11y.d.mts",
-        "default": "./dist/esm/jsx-a11y.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/jsx-a11y.d.cts",
-        "default": "./dist/cjs/jsx-a11y.cjs"
-      }
-    },
-    "./jsx": {
-      "import": {
-        "types": "./dist/esm/jsx.d.mts",
-        "default": "./dist/esm/jsx.mjs"
-      },
-      "require": {
-        "types": "./dist/cjs/jsx.d.cts",
-        "default": "./dist/cjs/jsx.cjs"
       }
     },
     "./next": {

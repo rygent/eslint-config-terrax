@@ -4,6 +4,7 @@ import pluginPrettier from 'eslint-plugin-prettier';
 
 const rules: TSESLint.FlatConfig.Rules = {
 	'prettier/prettier': 'error',
+
 	'arrow-body-style': 'off',
 	'prefer-arrow-callback': 'off',
 	'no-inline-comments': 'off'
