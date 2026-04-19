@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.6.0](https://github.com/rygent/eslint-config-terrax/compare/0.5.0...0.6.0) - (2026-04-19)
+
+## Features
+
+- Remove & merge configs ([334719c](https://github.com/rygent/eslint-config-terrax/commit/334719ccde09012d1c35500f7a927caae7aa5da7)) by @rygent
+- Attempt to support eslint v10 ([0fc83ae](https://github.com/rygent/eslint-config-terrax/commit/0fc83ae1dc44552a8a044b565c4a112e7b12b78e)) by @rygent
+- Support eslint v10 ([afd2250](https://github.com/rygent/eslint-config-terrax/commit/afd2250cc0cf8c8a5421242f93397334cc716d3c)) by @rygent
+
 # [0.5.0](https://github.com/rygent/eslint-config-terrax/compare/0.4.2...0.5.0) - (2026-01-01)
 
 ## Features
