@@ -142,7 +142,7 @@
     "@types/node": "^24.13.6",
     "esbuild-plugin-file-path-extensions": "^2.1.4",
     "eslint": "^10.10.0",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.8",
     "tsup": "^8.5.1",
     "tsx": "^4.23.13",
     "typescript": "^5.9.3"
