@@ -165,5 +165,5 @@
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
   },
-  "packageManager": "pnpm@12.6.0"
+  "packageManager": "pnpm@12.9.1"
 }
