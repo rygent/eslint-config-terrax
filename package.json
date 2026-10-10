@@ -139,7 +139,7 @@
     "@favware/cliff-jumper": "^6.1.0",
     "@sapphire/node-utilities": "^1.0.2",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "@types/node": "^24.19.1",
+    "@types/node": "^24.19.2",
     "eslint": "^10.12.0",
     "prettier": "^3.9.9",
     "tsdown": "^0.23.0",
