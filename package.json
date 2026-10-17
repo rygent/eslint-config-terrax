@@ -140,7 +140,7 @@
     "@sapphire/node-utilities": "^1.0.2",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/node": "^24.19.2",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "prettier": "^3.9.10",
     "tsdown": "^0.23.1",
     "tsx": "^4.23.15",
